@@ -1,0 +1,150 @@
+.slider-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.prev,
+button.next {
+  transition: all 220ms ease-in;
+}
+
+button.prev {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+button.next {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+}
+
+button.prev img,
+button.next img {
+  width: 2rem;
+}
+
+button.prev:hover,
+button.next:hover {
+  scale: 1.2;
+}
+
+.slider-container:hover button.prev {
+  left: 2rem;
+  opacity: 1;
+}
+
+.slider-container:hover button.next {
+  right: 2rem;
+  opacity: 1;
+}
+
+.slide-content {
+  width: 70%;
+}
+
+.slide-title {
+  font-size: 5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.slide-links-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.slide-link {
+  padding: 0.5rem 3rem;
+  font-weight: bold;
+  transition: all 220ms;
+}
+
+@media (max-width: 1280px) {
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .slide-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container:hover button.prev {
+    left: 1rem;
+  }
+
+  .slider-container:hover button.next {
+    right: 1rem;
+  }
+
+  .slide-title {
+    font-size: 3rem;
+  }
+
+  .slide-link {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 590px) {
+  .slider-container:hover button.prev {
+    left: 0.5rem;
+  }
+
+  .slider-container:hover button.next {
+    right: 0.5rem;
+  }
+
+  .slide-content {
+    width: 75%;
+    text-align: left;
+    align-items: left;
+  }
+
+  .slide-title {
+    font-size: 9vw;
+  }
+
+  .slide-links-container {
+    width: 100%;
+    align-items: left;
+    justify-content: left;
+    gap: 1rem;
+    flex-direction: column;
+  }
+
+  .slide-link {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+  }
+}
